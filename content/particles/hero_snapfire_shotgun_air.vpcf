@@ -1,0 +1,197 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf31:version{593cd181-a1d6-4c6f-9a8c-0534e8d44db0} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 3.0
+	m_ConstantColor = [ 115, 115, 115, 255 ]
+	m_nBehaviorVersion = 10
+	m_nFirstMultipleOverride_BackwardCompat = 3
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 192.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 62
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ 0.0, 0.0, 0.0 ]
+					m_entityName = "self"
+				},
+			]
+			m_previewState = 
+			{
+				m_previewModel = "models/heroes/snapfire/snapfire.vmdl"
+				m_nModSpecificData = 691
+				m_sequenceName = "snapfire_idle_loadout"
+				m_hitboxSetName = "select_low"
+			}
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_vecDistanceBias = [ 1.0, 1.0, 0.0 ]
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 50
+			m_nAlphaMax = 50
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 1.5
+			m_fLifetimeMin = 1.5
+		},
+		{
+			_class = "C_INIT_VelocityFromCP"
+			m_nControlPoint = 1
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 128.0
+			m_flMaxTraceLength = 2048.0
+			m_CollisionGroupName = "DEBRIS"
+			m_bIncludeWater = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 64.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 64.0 ]
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+			m_fDrag = 0.5
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_Orient2DRelToCP"
+			m_flRotOffset = 90.0
+			m_nFieldOutput = "12"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_OFF"
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_nOpEndCapState = "PARTICLE_ENDCAP_ENDCAP_ON"
+			m_Rate = -2.0
+			m_flEndTime = 9999999.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.25
+			m_flStartScale = 0.0
+			m_flEndScale = 1.5
+		},
+		{
+			_class = "C_OP_SetControlPointsToParticle"
+			m_nFirstControlPoint = 3
+			m_bSetOrientation = true
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.5
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 0, 0, 0 ]
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_MovementPlaceOnGround"
+			m_flOffset = 128.0
+			m_flMaxTraceLength = 1024.0
+			m_flTolerance = 96.0
+			m_flTraceOffset = 256.0
+			m_CollisionGroupName = "DEBRIS"
+			m_nRefCP1 = 3
+			m_nLerpCP = 3
+			m_bIncludeWater = true
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_blast.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_projectile.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_shell.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_line.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_aoe_glow.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_volume.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_shake.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_pointblank.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_snapfire/hero_snapfire_shotgun_muzzle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/hero_snapfire_shotgun_spray_button_mash.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/hero_snapfire_shotgun_cone_button_mash.vpcf"
+		},
+	]
+}

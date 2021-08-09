@@ -1,0 +1,40 @@
+.ScoreRoot {
+  width: 400px;
+  height: 100px;
+
+  horizontal-align: center;
+  vertical-align: top;
+
+  background-color: blue;
+}
+
+#ScoreName {
+  horizontal-align: center;
+  font-size: 24px;
+  color: white;
+  text-decoration: underline;
+}
+#Scores {
+  flow-children: right;
+  margin-top: 30px;
+}
+
+.Score {
+  flow-children: right;
+}
+
+#LeftSide {
+  width: 50px;
+  height: 50px;
+  margin: 5px 5px 5px 5px;
+  /* background-image: purple; */
+}
+
+#RightSide {
+}
+
+#ScoreTitle {
+  color: white;
+  font-size: 30px;
+  margin-top: 5px;
+}

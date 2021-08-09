@@ -1,0 +1,20 @@
+"addon"
+{
+	"Unassigned"      								"Unassigned Team"
+	"Spectator"       								"Spectator Team"
+	"Neutrals"        								"Neutral Team"
+	"NoTeam"          								"No Team"
+
+	"DOTA_GoodGuys"   								"knucks"
+	"DOTA_BadGuys"    								"!"
+	"DOTA_Custom1"    								"?"
+	"DOTA_Custom2"    								"Red Team"
+	"DOTA_Custom3"    								"Pink Team"
+	"DOTA_Custom4"    								"Green Team"
+	"DOTA_Custom5"    								"Brown Team"
+	"DOTA_Custom6"    								"Orange Team"
+	"DOTA_Custom7"    								"Beige Team"
+	"DOTA_Custom8"    								"Purple Team"
+	
+	"addonname"										"Cookie Party"
+}

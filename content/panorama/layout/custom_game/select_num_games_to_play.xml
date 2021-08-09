@@ -1,0 +1,38 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/select_num_games_to_play.css" />
+	</styles>
+    <scripts>
+		<include src="file://{resources}/scripts/custom_game/select_num_games_to_play.js" />
+	</scripts>
+
+    <snippets>
+        <snippet name="NumGamesSnippet">
+            <Panel class="NumGamesMainPanel" hittest="false">
+                <Panel id="NumGamesSelectRoot" class="NumGamesSelectRoot" hittest="true">
+                    <Label id="NumGamesSelectLabel" text="#num_games_select" style="" />
+                    <Label id="NumGamesName" style="" />
+                    <Panel id="NumGamesPanel" class="NumGamesPanel">
+                        <Panel id="NumGamesPanel0" class="NumGamesPseudoImage" onactivate="OnHighlightNumGames(0)" onmouseover="OnNumGamesMouseOver(0)" onmouseout="OnNumGamesMouseOut(0)">
+                            <Label class="NumGamesLabel" id="NumGamesLabel1" text="Short"/>
+                        </Panel>
+                        <Panel id="NumGamesPanel1" class="NumGamesPseudoImage" onactivate="OnHighlightNumGames(1)" onmouseover="OnNumGamesMouseOver(1)" onmouseout="OnNumGamesMouseOut(1)">
+                            <Label class="NumGamesLabel" id="NumGamesLabel2"  text="Medium"/>
+                        </Panel>
+                        <Panel id="NumGamesPanel2" class="NumGamesPseudoImage" onactivate="OnHighlightNumGames(2)" onmouseover="OnNumGamesMouseOver(2)" onmouseout="OnNumGamesMouseOut(2)">
+                            <Label class="NumGamesLabel" id="NumGamesLabel3"  text="Long"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id="NumGamesSelectPanel" class="NumGamesSelectPanel" >
+                        <Button class="SelectNumGamesButton" onactivate="OnSelectNumGames()"><Label text="#num_games_select_button"></Label></Button>
+                    </Panel>
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+
+    <Panel class="SelectionRoot">
+        <Panel id="SelectionPanel">
+        </Panel>
+    </Panel>
+</root>

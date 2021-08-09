@@ -1,0 +1,2 @@
+--timber throws chakram
+--snap must jump over it with cookie

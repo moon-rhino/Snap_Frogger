@@ -1,0 +1,65 @@
+<root>
+
+    <styles>
+        <include src="file://{resources}/styles/custom_game/scoreboard_custom.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/scoreboard_custom.js" />
+    </scripts>
+    <snippets>
+        <snippet name="Score">
+            <Panel class="Score">
+                <Panel id= "LeftSide">
+                
+                    <!-- <Panel id="HeroImage">
+                    
+                    </Panel> -->
+                </Panel>
+
+                <Panel id= "RightSide">
+                    <Panel id="TopSide">
+                        <Label id ="ScoreTitle" text="20"/>
+                    </Panel>
+                    <!-- <Panel id="BottomSide">
+                        <Panel id="Background" />
+                        <Label id ="QuestDescription" text="Sample Score Desc"/>
+
+                        <Label id="QuestProgress" test="0/1"/>
+                    </Panel> -->
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="ScoreHero">
+            <Panel class="Score">
+                <Panel id= "LeftSide">
+                    <DOTAHeroImage id = "HeroImage" class="HeroImage" heroname="npc_dota_hero_snapfire" heroimagestyle="portrait" onactivate="OnHighlightHero(0)" onmouseover="OnHeroMouseOver(0)" onmouseout="OnHeroMouseOut(0)"/>
+                    <!-- <Panel id="HeroImage">
+                    
+                    </Panel> -->
+                </Panel>
+
+                <Panel id= "RightSide">
+                    <Panel id="TopSide">
+                        <Label id ="ScoreTitle" text="20"/>
+                    </Panel>
+                    <!-- <Panel id="BottomSide">
+                        <Panel id="Background" />
+                        <Label id ="QuestDescription" text="Sample Score Desc"/>
+
+                        <Label id="QuestProgress" test="0/1"/>
+                    </Panel> -->
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+    <!-- <Panel class="ScoreRoot">
+
+        <Label id="ScoreName" text="Scores" />
+        <Panel id="Scores">
+        </Panel>
+        
+
+    </Panel> -->
+
+</root>
